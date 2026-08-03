@@ -1,5 +1,13 @@
 name: probe
-on: [push, workflow_dispatch]
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+    inputs:
+      force_run:
+        description: "Run Claude even if 5 hours haven't elapsed"
+        type: boolean
+        default: false
 jobs:
   hello:
     runs-on: ubuntu-latest
