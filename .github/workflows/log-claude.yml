@@ -1,4 +1,4 @@
-name: probe
+name: log-claude
 
 on:
   schedule:
